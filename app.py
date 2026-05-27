@@ -11,6 +11,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores.faiss import DistanceStrategy
+
 # ==========================================
 # LOAD ENV
 # ==========================================
@@ -117,6 +118,7 @@ Rules:
    respond with:
    "I'm sorry, but the provided documentation does not contain that information."
 4. Keep answers concise and technical.
+5. If it is not relavant to the question ignore
 """
 
     # ==========================================
@@ -142,23 +144,17 @@ Question:
     # ==========================================
 
     response = client.chat.completions.create(
-
         model=os.getenv("MODEL_NAME"),
-
         messages=[
-
             {
                 "role": "system",
                 "content": system_prompt
             },
-
             {
                 "role": "user",
                 "content": user_prompt
             }
-
         ],
-
         max_tokens=300,
         temperature=0.3
     )
@@ -178,12 +174,12 @@ Question:
     answer = response.choices[0].message.content
 
     return answer, retrieved_docs, latency
+
 # ==========================================
 # BUILD VECTORSTORE
 # ==========================================
 
 with st.spinner("Loading PDF and building vector DB..."):
-
     vectorstore = build_vectorstore()
 
 st.success("Vector database ready!")

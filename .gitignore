@@ -1,10 +1,123 @@
-# Python-generated files
+# Python generated files
 __pycache__/
-*.py[oc]
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
 build/
 dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
 wheels/
-*.egg-info
+share/python-wheels/
+*.egg-info/
+*.egg
+MANIFEST
 
-# Virtual environments
-.venv
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Type checkers / linters
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Environments
+.env
+.env.*
+.venv/
+venv/
+ENV/
+env/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# SQLite
+*.sqlite3
+*.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# FastAPI / Uvicorn
+uvicorn.log
+
+# PyCharm
+.idea/
+
+# VS Code
+.history/
+
+# Temporary files
+tmp/
+temp/
+
+# Model / ML artifacts
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pickle
+*.pkl
+*.joblib
+
+# FAISS
+*.faiss
+faiss_index/
+
+# Hugging Face cache
+.cache/huggingface/
+.huggingface/
+
+# Mac/Linux hidden files
+.AppleDouble
+.LSOverride
+
+# Windows files
+Desktop.ini
