@@ -22,8 +22,9 @@ load_dotenv()
 # DEEPINFRA CLIENT
 # ==========================================
 
+import streamlit as st
 client = OpenAI(
-    api_key=os.getenv("API_KEY"),
+    api_key=st.secrets["API_KEY"],
     base_url="https://api.deepinfra.com/v1/openai"
 )
 
@@ -144,7 +145,7 @@ Question:
     # ==========================================
 
     response = client.chat.completions.create(
-        model=os.getenv("MODEL_NAME"),
+        model="meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
         messages=[
             {
                 "role": "system",
